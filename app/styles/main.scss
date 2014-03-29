@@ -1,0 +1,212 @@
+/*
+#################################################
+App: Blueprint, Author: Marcel Hadorn (@marc3llo)
+#################################################
+*/
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'partials/_variables';
+@import 'sass-bootstrap/lib/bootstrap';
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #2c94c9;
+}
+
+* {
+    text-shadow: none !important;
+}
+
+p {
+    color: white;
+}
+
+.bulless {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+
+#profile {
+    display: none;
+}
+
+body.signedin #profile {
+    display: block;
+}
+
+
+#profile ul {
+    display: none;
+}
+
+.well {
+    background-color: transparent;
+    @include box-shadow(none);
+}
+
+.nav-pills li a { border: 1px solid transparent; }
+.nav-pills li.active a { border: 1px solid white; }
+
+    /* Gallery & Lighbox
+    --------------------------------*/
+    
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    display: none;
+    overflow: auto;
+    overflow-y: scroll;
+    @include transition(.5s cubic-bezier(.52,-0.11,.54,1.17) all);
+    background-color: transparentize(#1e4e80, .3);
+
+    &.in {
+        display: block;
+    }
+}
+
+.cellobox {
+    display: none;
+    position: fixed;
+    outline: 0;
+    top: 50px;
+    left: 50%;
+    z-index: 99999;
+    margin: 0px 0 0 -400px;
+    border: 1px solid white;
+    @include box-shadow(0px 3px 6px rgba(0,0,0,.2));
+
+    &.fade {
+        @include transition(.5s cubic-bezier(.52,-0.11,.54,1.17) top, .5s cubic-bezier(.52,-0.11,.54,1.17) opacity);
+    }
+
+    &.in {
+        top: 50px;
+        display: block;
+        opacity: 1;
+    }
+}
+#gallery {
+    .thumbnail img {
+        background-size: cover;
+        height: 200px;
+        width: 100%;
+    }
+}
+
+
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+#signinform {
+    margin-bottom: 20px !important;
+}
+
+#signoutform {
+    display: none;
+
+    h4 {
+        margin: 6px 0 0 15px;
+        float: left;
+    }
+
+    .btn {
+        float: right;
+        margin-right: 15px;
+    }
+}
+
+body.signedin {
+    #signinform {
+        display: none;
+    }
+
+    #signoutform {
+        display: block;
+    }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
