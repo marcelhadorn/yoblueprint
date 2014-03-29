@@ -2,30 +2,38 @@
 #################################################
 App: Blueprint, Author: Marcel Hadorn (@marc3llo)
 #################################################
+All the Blueprint Magic
 */
 $(document).ready(function(){
+	//Getting data from the data.json file
 	var data = $.getJSON( "scripts/data.json", function(d) {
-		//console.log(d);
+		// define the view from data
 		var view = d;
 
+		// Getting all the Slices from the document
 		$('.slice').each(function(){
 			var id = $(this).attr('id');
 	
-			$("#"+ id).load("templates/"+ id +".html",function(){
+			// Routing the data and slices
+			$("#"+ id).load("slices/"+ id +".html",function(){
     			var template = document.getElementById(''+ id +'').innerHTML;
     			var output = Mustache.render(template, view);
     			$("#"+ id).html(output);
   			});
   		});
 
+		// login and local storage
   		$(document).on('click', '#signinbtn', function(){
   			event.preventDefault();
+  			// Get input from loginform
 			var inputpass = $("input#password").val();
 			var inputuser = $("input#user").val();
 
 			$.each(d.users, function(){
+				//get logins from data.json
 				password = this['password'];
 				username = this['username'];
+				// verifiy user
 				if(inputpass == password && inputuser == username) {
 					// Put the object into storage
 					var signin = { 'user': username };
@@ -40,20 +48,23 @@ $(document).ready(function(){
 			});
 		});
 
-
+  		// Show user is logged in
   		var retrievedObject = localStorage.getItem('signin');
 		var localusername = JSON.parse(retrievedObject);
 		if(retrievedObject){
+			// add class to body from logged in user
 			$.each(d.users, function(){
 				username = this['username'];
 				if(localusername.user == username ) {
 					$('body').addClass(username);
 				}
-			});	
+			});
+			// add class to body when signed in
 			$('body').addClass('signedin');
 		}
 	});
-
+	
+	// sign out by clearing localStorage
 	$('#signout').click(function(){
 		localStorage.clear('signin');
 		window.location.reload();

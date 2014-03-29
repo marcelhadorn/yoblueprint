@@ -40,15 +40,19 @@ App: Blueprint, Author: Marcel Hadorn (@marc3llo)
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
+                    <!-- Add slices in a column -->
                     <div id="signin" class="slice"></div>
                     <div id="signout" class="slice"></div>
                     <div id="profile" class="slice"></div>
                 </div>
+                <!-- Slices may also be loaded in a column -->
                 <div id="content" class="slice col-lg-8"></div>
             </div>
+            <!-- Or even be a row itself -->
             <div id="gallery" class="slice row"></div>
+
             <div class="footer">
-                <p>Blueprint • The framework for Interaction Designers</p>
+                <p>Blueprint • The framework for Interaction Designers • by Marcel Hadorn</p>
             </div>
 
         </div>
@@ -60,23 +64,18 @@ App: Blueprint, Author: Marcel Hadorn (@marc3llo)
         <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
+
+        <!-- Load Mustache.js -->
         <script src="bower_components/mustache/mustache.js"></script>
-        <!-- <script src="scripts/data.js"></script> -->
+
+        <!-- The Blueprint magic -->
         <script src="scripts/blueprints.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
-
+        
+        <!-- Bootstrap usefullness -->
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/sass-bootstrap/js/affix.js"></script>
         <script src="bower_components/sass-bootstrap/js/alert.js"></script>

@@ -2,6 +2,7 @@
 #################################################
 App: Blueprint, Author: Marcel Hadorn (@marc3llo)
 #################################################
+Sign Out
 -->
 <div id="signoutform">
 	<div class="well">
@@ -14,6 +15,7 @@ App: Blueprint, Author: Marcel Hadorn (@marc3llo)
 		var retrievedObject = localStorage.getItem('signin');
 		var username = JSON.parse(retrievedObject);
 		if(localStorage.getItem('signin')){
+			// Write Username h4.username
 			$('h4.username').html('Signed in as <b>'+ username.user +'</b>');
 		}
 	});

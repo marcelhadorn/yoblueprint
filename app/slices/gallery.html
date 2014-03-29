@@ -2,6 +2,7 @@
 #################################################
 App: Blueprint, Author: Marcel Hadorn (@marc3llo)
 #################################################
+Gallery Plugin with a very simple lightbox Extension
 -->
 <div class="col-lg-12">
 	<h2>Gallery</h2>
@@ -22,21 +23,28 @@ App: Blueprint, Author: Marcel Hadorn (@marc3llo)
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
+	// Simple cellobox by Marcel Hadorn
+	// set default values
 	var id = 'img';
 	var w = '900';
 	var lm = '-450';
 
+	// trigger the click on a image
 	$('.cb').click(function(){
 		event.preventDefault();
+		// set which image was clicked
 		id = $('#' + $(this).attr("data-id"));
+		// get image width and center it
 		w = id.width();
 		lm = -(w / 2);
 		id.css('margin-left', lm);
 		id.addClass('in');
+		// show backdrop
 		$('.backdrop').show();
 	});
 
 	$('.backdrop, .cellobox').click(function(){
+		// close image
 		$('.cellobox').removeClass('in');
 		$('.backdrop').hide();
 	});

@@ -2,6 +2,7 @@
 #################################################
 App: Blueprint, Author: Marcel Hadorn (@marc3llo)
 #################################################
+Displaying Profile Information
 -->
 <div class="well">
 {{#users}}
@@ -14,16 +15,20 @@ App: Blueprint, Author: Marcel Hadorn (@marc3llo)
 </div>
 
 <script>
+	// Show only profile from faked login
 	$(document).ready(function(){
+		// only run if data stored
 		if(localStorage.getItem('signin')){
-		var retrievedObject = localStorage.getItem('signin');
-		var username = JSON.parse(retrievedObject);
-		$('ul.profile').each(function(){
-			var id = $(this).attr('id');
-			if(username.user == id){
-				$(this).show();
-			}
-		});
+			//get username from localStorage
+			var retrievedObject = localStorage.getItem('signin');
+			var username = JSON.parse(retrievedObject);
+			// Show Profile if username corresponds with username from localStorage
+			$('ul.profile').each(function(){
+				var id = $(this).attr('id');
+				if(username.user == id){
+					$(this).show();
+				}
+			});
 		}
 	});
 </script>
