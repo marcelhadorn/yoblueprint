@@ -1,4 +1,28 @@
 {
+	"app": {
+		"name": "Blueprint",
+		"version": "0.1"
+	},
+	"pages":[
+		{
+			"title": "home",
+			"href": "/",
+			"class": "",
+			"icon": "glyphicon glyphicon-home"
+		},
+		{
+			"title": "about",
+			"href": "about.html",
+			"class": "",
+			"icon": "glyphicon glyphicon-user"
+		},
+		{
+			"title": "contact",
+			"href": "contact.html",
+			"class": "",
+			"icon": "glyphicon glyphicon-envelope"
+		}
+	],
 	"users": [
 		{
 			"username": "Marcello",
@@ -76,6 +100,26 @@
 			"id": "005",
 			"caption": "Miami",
 			"url": "http://marcelhadorn.com/system/html/miami2012 64-6bed8b70.jpg"
+		},
+		{
+			"id": "006",
+			"caption": "Miami",
+			"url": "http://marcelhadorn.com/system/html/miami2012 44-59939c71.jpg"
+		},
+		{
+			"id": "007",
+			"caption": "Miami",
+			"url": "http://marcelhadorn.com/system/html/miami2012 5-974fb228.jpg"
+		},
+		{
+			"id": "008",
+			"caption": "Miami",
+			"url": "http://marcelhadorn.com/system/html/miami2012 1-b0df8195.jpg"
+		}
+	],
+	"icon": [
+		{
+			"home": "<span class='glyphicon glyphicon-home'></span>"
 		}
 	],
 	"lorem": "<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec eget lacinia sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl.</p>"

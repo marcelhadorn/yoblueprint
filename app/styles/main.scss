@@ -8,6 +8,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 @import 'partials/_variables';
 @import 'sass-bootstrap/lib/bootstrap';
 
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -35,12 +36,16 @@ p {
     padding-left: 0px;
 }
 
+input[type="text"] {
+    @include box-shadow(none);
+}
 
-#profile {
+
+.isin {
     display: none;
 }
 
-body.signedin #profile {
+body.signedin .isin {
     display: block;
 }
 
@@ -55,7 +60,7 @@ body.signedin #profile {
 }
 
 .nav-pills li a { border: 1px solid transparent; }
-.nav-pills li.active a { border: 1px solid white; }
+.nav-pills li.active a { border: 1px solid white; span.glyphicon { margin-right: 10px;} }
 
     /* Gallery & Lighbox
     --------------------------------*/
