@@ -31,7 +31,8 @@
 				"first": "Marcel",
 				"last": "Hadorn"
 			},
-			"occupation": "Interaction Designer"
+			"occupation": "Interaction Designer",
+			"role": "Superadmin"
 		},
 		{	
 			"username": "Admin",
@@ -40,7 +41,8 @@
 				"first": "Rick",
 				"last": "Ross"
 			},
-			"occupation": "The Boss"
+			"occupation": "The Boss",
+			"role": "Admin"
 		}
 	],
 	"fruits": [

@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    '<%= yeoman.app %>/*.html',
+                    '<%= yeoman.app %>/{,*/}*.html',
                     '.tmp/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -100,7 +100,7 @@ module.exports = function (grunt) {
             all: {
                 options: {
                     run: true,
-                    urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
+                    urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/{,*/}*.html']
                 }
             }
         },
@@ -150,7 +150,7 @@ module.exports = function (grunt) {
         },*/
         'bower-install': {
             app: {
-                html: '<%= yeoman.app %>/index.html',
+                html: '<%= yeoman.app %>/{,*/}*.html',
                 ignorePath: '<%= yeoman.app %>/'
             }
         },
@@ -176,7 +176,7 @@ module.exports = function (grunt) {
             options: {
                 dest: '<%= yeoman.dist %>'
             },
-            html: '<%= yeoman.app %>/index.html'
+            html: '<%= yeoman.app %>/{,*/}*.html'
         },
         usemin: {
             options: {
@@ -237,7 +237,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>',
-                    src: '*.html',
+                    src: '{,*/}*.html',
                     dest: '<%= yeoman.dist %>'
                 }]
             }
@@ -259,9 +259,10 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
-                        'images/{,*/}*.{webp,gif}',
+                        'images/{,*/}*.{webp,gif,png}',
                         'styles/fonts/{,*/}*.*',
-                        'bower_components/sass-bootstrap/fonts/*.*'
+                        'bower_components/sass-bootstrap/fonts/*.*',
+                        'scripts/{,*/}*.json'
                     ]
                 }]
             },
@@ -339,7 +340,7 @@ module.exports = function (grunt) {
         'uglify',
         'modernizr',
         'copy:dist',
-        'rev',
+        //'rev',
         'usemin'
     ]);
 
