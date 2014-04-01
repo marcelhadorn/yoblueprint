@@ -5,6 +5,14 @@ App: Blueprint, Author: Marcel Hadorn (@marc3llo)
 All the Blueprint Magic
 */
 $(document).ready(function(){
+	// SETTINGS!
+	var showgrid = true;
+
+
+	if(showgrid == true){
+		$('html').addClass('showgrid');
+	}
+
 	//Getting data from the data.json file
 	var data = $.getJSON( "scripts/data.json", function(d) {
 		// define the view from data

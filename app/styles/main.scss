@@ -21,7 +21,112 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     background: #2c94c9;
+    min-height: 100%;
 }
+html {
+    background: #2c94c9;
+    height: 100%;
+}
+
+/*
+ *  Grid Overlay for Twitter Bootstrap
+ */
+ .showgrid {
+    //@media (min-width: 1170px) {
+        body {
+            background: -webkit-linear-gradient(
+                            90deg, 
+                            rgba(255,255,255,0.04), 
+                            rgba(255,255,255,0.04)    4.545%, 
+                            rgba(255,255,255,0)       4.545%, 
+                            rgba(255,255,255,0)       100%
+                        ),
+                        -webkit-linear-gradient(
+                            0deg,
+                            rgba(255,255,255,0),
+                            rgba(255,255,255,0)      34.5%,
+                            rgba(255,255,255,0.12)    34.5%,
+                            rgba(255,255,255,0.12)    35.5%,
+                            rgba(255,255,255,0.05)      35.5%,
+                            rgba(255,255,255,0.05)      64.5%,
+                            rgba(255,255,255,0.12)    64.5%,
+                            rgba(255,255,255,0.12)    65.5%,
+                            rgba(255,255,255,0)      65.5%,
+                            rgba(255,255,255,0)      100%
+                        );
+            background-size: 1.692em 1.692em, 6.992em 7.692em; /* 7.692 - 2.308 = 5.384 */
+            background-position: left top, center top;
+        }
+    //}
+    //@media (max-width: 1199px) and (min-width: 980px) {
+    //    body {
+    //        background: -webkit-linear-gradient(
+    //                        90deg, 
+    //                        rgba(255,255,255,0.1), 
+    //                        rgba(255,255,255,0.1)    4.545%, 
+    //                        rgba(255,255,255,0)       4.545%, 
+    //                        rgba(255,255,255,0)       100%
+    //                    ),
+    //                    -webkit-linear-gradient(
+    //                        0deg,
+    //                        rgba(255,255,255,0),
+    //                        rgba(255,255,255,0)       37.5%,
+    //                        rgba(255,255,255,0.1)    37.5%,
+    //                        rgba(255,255,255,0.1)    38.75%,
+    //                        rgba(255,255,255,0)       38.75%,
+    //                        rgba(255,255,255,0)       62.5%,
+    //                        rgba(255,255,255,0.1)    62.5%,
+    //                        rgba(255,255,255,0.1)    63.75%,
+    //                        rgba(255,255,255,0)       63.75%,
+    //                        rgba(255,255,255,0)       100%
+    //                    );
+    //        background-size: 1.692em 1.692em, 5.904em 6.154em;
+    //        background-position: left top, center top;
+    //    }
+    //}
+
+
+    //@media (max-width: 979px) and (min-width: 761px) {
+    //    body {
+    //        background: -webkit-linear-gradient(
+    //                        90deg, 
+    //                        rgba(255,255,255,0.1), 
+    //                        rgba(255,255,255,0.1)    4.545%, 
+    //                        rgba(255,255,255,0)       4.545%, 
+    //                        rgba(255,255,255,0)       100%
+    //                    ),
+    //                    -webkit-linear-gradient(
+    //                        0deg,
+    //                        rgba(255,255,255,0),
+    //                        rgba(255,255,255,0)       32.25%,
+    //                        rgba(255,255,255,0.1)    32.25%,
+    //                        rgba(255,255,255,0.1)    33.87%,
+    //                        rgba(255,255,255,0)       33.87%,
+    //                        rgba(255,255,255,0)       64.52%,
+    //                        rgba(255,255,255,0.1)    64.52%,
+    //                        rgba(255,255,255,0.1)    66.13%,
+    //                        rgba(255,255,255,0)       66.13%,
+    //                        rgba(255,255,255,0)       100%
+    //                    );
+    //        background-size: 1.692em 1.692em, 4.769em 4.769em;
+    //        background-position: left top, center top;
+    //    }
+    //}
+    //@media (max-width: 760px){
+    //    body {
+    //        background: -webkit-linear-gradient(
+    //                        90deg, 
+    //                        rgba(255,255,255,0.1), 
+    //                        rgba(255,255,255,0.1)    4.545%, 
+    //                        rgba(255,255,255,0)       4.545%, 
+    //                        rgba(255,255,255,0)       100%
+    //                    );
+    //        background-size: 1.692em 1.692em;
+    //        background-position: left top;  
+    //    }
+    //}
+}
+
 
 * {
     text-shadow: none !important;
@@ -36,8 +141,13 @@ p {
     padding-left: 0px;
 }
 
-input[type="text"] {
+input[type="text"],input[type="email"], textarea {
     @include box-shadow(none);
+    background: transparentize($brand-primary,.9) !important;
+
+    &::-webkit-input-placeholder {
+        color: white;
+    }
 }
 
 
@@ -52,6 +162,7 @@ body.signedin .isin {
 
 #profile ul {
     display: none;
+    padding-left: 18px;
 }
 
 .well {
@@ -59,8 +170,23 @@ body.signedin .isin {
     @include box-shadow(none);
 }
 
+h2.brand {
+    img, span {
+        float: left;
+    }
+
+    img {
+        width: 50px; height: 50px;
+        border: solid 1px white;
+        border-radius:8px;
+        margin: -7px 12px 0 0;
+    }
+}
+.nav {
+    margin-bottom: 17px;
+}
 .nav-pills li a { border: 1px solid transparent; }
-.nav-pills li.active a { border: 1px solid white; span.glyphicon { margin-right: 10px;} }
+.nav-pills li.active a { border: 1px solid white; span.glyphicon { margin-right: 5px;} }
 
     /* Gallery & Lighbox
     --------------------------------*/
@@ -86,6 +212,8 @@ body.signedin .isin {
 .cellobox {
     display: none;
     position: fixed;
+    min-width: 480px;
+    min-height: 480px;
     outline: 0;
     top: 50px;
     left: 50%;
@@ -105,10 +233,47 @@ body.signedin .isin {
     }
 }
 #gallery {
-    .thumbnail img {
+    .thumbnail, .thumbnail img {
         background-size: cover;
         height: 200px;
         width: 100%;
+    }
+
+    .thumbnail, .cellobox {
+        background: transparentize($brand-info,.6);
+
+        &:hover {
+            background-color: rgba(255,255,255,.1);
+            border-color: white;
+        }
+
+        .glyphicon {
+            position: relative;
+            top: 50%; left: 50%;
+            margin: -38px 0 0 -35px;
+
+            &:before {
+                font-size: 5em;
+                color: white;
+            }
+        }
+    }
+
+    .cellobox {
+        background: white;
+
+        &:hover {
+            background-color: rgba(255,255,255,.8);
+        }
+
+        .glyphicon {
+            position: relative;
+            margin-top: 41%;
+
+            &:before {
+                color: $brand-primary;
+            }
+        }
     }
 }
 
@@ -132,7 +297,7 @@ body.signedin .isin {
     margin-top: 0;
     margin-bottom: 0;
     line-height: 40px;
-    padding-bottom: 19px;
+    padding-bottom: 15px;
 }
 
 /* Custom page footer */

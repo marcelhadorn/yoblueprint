@@ -3,7 +3,7 @@
 		<li class="navel {{title}}"><a href="{{href}}"><span class='{{{icon}}}'></span> {{title}}</a></li>
 	{{/pages}}
 </ul>
-<h2>{{app.name}}</h2>
+<h2 class="brand"><img src="{{app.icon}}" alt="{{app.name}}"/> <span class="hidden-xs">{{app.name}} {{app.version}}</h2>
 <script>
 	$(document).ready(function(){
 		$('.home .home').addClass('active');

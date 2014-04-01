@@ -10,13 +10,15 @@ Gallery Plugin with a very simple lightbox Extension
 {{#images}}
 <div class="col-xs-6 col-md-3">
     <a data-toggle="cellobox" href="img{{id}}" data-id="img{{id}}" class="cb thumbnail">
-      <img src="images/ph.png" style="background-image: url('{{url}}');" alt="{{caption}}">
+      <span class="glyphicon glyphicon-picture"></span>
+      <!-- <img src="images/ph.png" style="background-image: url('{{url}}');" alt="{{caption}}"> -->
     </a>
 </div>
 {{/images}}
 {{#images}}
 <div id="img{{id}}" class="cellobox fade"  tabindex="-1" role="dialog" aria-hidden="true">
-	<img src="{{url}}">
+	<span class="glyphicon glyphicon-picture"></span>
+	<!-- <img src="{{url}}"> -->
 </div>
 {{/images}}
 <div class="backdrop">
