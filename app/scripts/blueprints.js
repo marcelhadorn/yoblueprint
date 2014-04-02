@@ -18,15 +18,13 @@ $(document).ready(function(){
 		// define the view from data
 		var view = d;
 
-		// Getting all the Slices from the document
-		$('.slice').each(function(){
-			var id = $(this).attr('id');
-	
-			// Routing the data and slices
-			$("#"+ id).load("slices/"+ id +".html",function(){
-    			var template = document.getElementById(''+ id +'').innerHTML;
+  		$('[unit]').each(function(){
+  			var unit = $(this).attr('unit');
+			// Routing the data and units
+			$(this).load("units/"+ unit +".html",function(){
+    			var template = this.innerHTML;
     			var output = Mustache.render(template, view);
-    			$("#"+ id).html(output);
+    			$('[unit="'+ unit +'"]').html(output);
   			});
   		});
 
@@ -73,7 +71,7 @@ $(document).ready(function(){
 	});
 	
 	// sign out by clearing localStorage
-	$('#signout').click(function(){
+	$('[unit="signout"]').click(function(){
 		localStorage.clear('signin');
 		window.location.reload();
 	});

@@ -28,19 +28,19 @@ App: Blueprint, Author: Marcel Hadorn (@marc3llo)
         <![endif]-->
 
         <div class="header ">
-            <div id="nav" class="slice container">
+            <div unit="nav" class="container">
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <!-- Add slices in a column -->
-                    <div id="signin" class="slice"></div>
-                    <div id="signout" class="slice"></div>
-                    <div id="profile" class="slice isin"></div>
+                    <div unit="signin"></div>
+                    <div unit="signout"></div>
+                    <div unit="profile" class="isin"></div>
                 </div>
                 <!-- Slices may also be loaded in a column -->
-                <div id="contact" class="slice col-lg-8"></div>
+                <div unit="contact" class="col-lg-8"></div>
             </div>
 
             <div class="footer">
@@ -48,7 +48,6 @@ App: Blueprint, Author: Marcel Hadorn (@marc3llo)
             </div>
 
         </div>
-        <div id="data" style="display: none;"></div>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->

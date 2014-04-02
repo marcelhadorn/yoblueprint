@@ -28,29 +28,28 @@ App: Blueprint, Author: Marcel Hadorn (@marc3llo)
         <![endif]-->
 
         <div class="header ">
-            <div id="nav" class="slice container">
+            <div unit="nav" class="container">
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <!-- Add slices in a column -->
-                    <div id="signin" class="slice"></div>
-                    <div id="signout" class="slice"></div>
-                    <div id="profile" class="slice isin"></div>
+                    <!-- Add units in a column -->
+                    <div unit="signin"></div>
+                    <div unit="signout"></div>
+                    <div unit="profile" class="isin"></div>
                 </div>
-                <!-- Slices may also be loaded in a column -->
-                <div id="content" class="slice col-lg-8"></div>
+                <!-- units may also be loaded in a column -->
+                <div unit="content" class="col-lg-8"></div>
             </div>
             <!-- Or even be a row itself -->
-            <div id="gallery" class="slice row isin"></div>
+            <div id="gallery" unit="gallery" class="row isin"></div>
 
             <div class="footer">
                 <p>Blueprint • The framework for Interaction Designers • by Marcel Hadorn</p>
             </div>
 
         </div>
-        <div id="data" style="display: none;"></div>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
