@@ -8,7 +8,6 @@ $(document).ready(function(){
 	// SETTINGS!
 	var showgrid = true;
 
-
 	if(showgrid == true){
 		$('html').addClass('showgrid');
 	}
@@ -71,7 +70,8 @@ $(document).ready(function(){
 	});
 	
 	// sign out by clearing localStorage
-	$('[unit="signout"]').click(function(){
+	$(document).on('click', '#signout', function(){
+		console.log(this);
 		localStorage.clear('signin');
 		window.location.reload();
 	});
