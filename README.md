@@ -24,11 +24,11 @@ Blueprint was build for the following type of workflow:
 
 ## Installation
 Blueprint is build with [Yeoman][4] with the couchapp generator, however you may also use the simple webapp-generator and edit the Gruntfile.js. If you use Yeoman simply go with:
-`$ yo couchapp`
-and checout this repo in your project:
-`$ git clone https://github.com/Marc3llo/blueprint.git` 
+```$ yo couchapp```
+and checkout this repo in your project:
+```$ git clone https://github.com/Marc3llo/blueprint.git``` 
 and install the dependencies by
-`$ bower install`
+```$ bower install```
 
 
 ## Usage
@@ -37,17 +37,21 @@ Units are like templates, and Blueprint provides already a couple units like a g
 
 #### Using Units
 Blueprint focuses on fast building of clickable prototypes. To include a unit, wether one of the default ones or your own. simply add the attribute "unit" to your container:
-`<div unit="gallery"></div>`
+```html
+<div unit="gallery"></div>
+```
 If its not an excisting unit, make sure to add your unit as a .html file to your _units_ folder. 
 
 You may use it in any possible way and add your desired bootstrap classes:
-`<div unit="content" class="col-md-6 well"></div>`
+```html
+<div unit="content" class="col-md-6 well"></div>
+```
 
 ### Mustache.js
 All data in Blueprint is placed into the data.json file in the scripts folder.
 
 If your Want to have different pages in your site you simply add them to your data.json as so while icons and class are optional:
-```
+```javascript
 "pages":[
 		{
 			"title": "home",
@@ -72,7 +76,7 @@ If your Want to have different pages in your site you simply add them to your da
 This makes it very easy to generate the Navigation, and keeps it up to date without the need of changing your HTML Markup.
 
 To repeat your pages in a Navigation you just can add this into your nav.html unit:
-```
+```html
 <ul class="nav nav-pills pull-right">
 	{{#pages}}
 		<li class="navel {{title}}"><a href="{{href}}"><span class='{{{icon}}}'></span> {{title}}</a></li>
@@ -83,9 +87,9 @@ This will repeat every page in the data.json into your unordered list with provi
 
 For detailed documentation visit [Mustach.js][2]
 
-### Grid
+### Show the Grid
 There's a grid overlay for the blueprint and basic bootstrap style. it is turned in the Settings section of the blueprint.js:
-```
+```javascript
 // SETTINGS!
 var showgrid = true;
 ```
@@ -94,12 +98,12 @@ var showgrid = true;
 If you build your own units you think they belong to the default selection or you have suggestions to make the code better. I'll gladly recieve a pull-request.
 
 ## Note
-I'm a Deisgner and Frontend-Developer, mainly writing HTML/CSS and some Frontend jQuery. Don't judge me for my javascript code! :)
+I'm a Interaction Designer and Frontend-Developer, mainly writing HTML/CSS and some Frontend jQuery. Don't judge me for my javascript code! :)
 
 
 
 
-[1](http://getbootstrap.com/)
-[2](https://github.com/janl/mustache.js)
-[3](https://jqueryui.com/)
-[4](http://yeoman.io)
+[1]: http://getbootstrap.com/
+[2]: https://github.co/janl/mustache.js 
+[3]: https://jqueryui.com/
+[4]: http://yeoman.io 
