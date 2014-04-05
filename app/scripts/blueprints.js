@@ -48,7 +48,7 @@ $(document).ready(function(){
 					//console.log('retrievedObject: ', JSON.parse(retrievedObject));
 					window.location.reload();
 				} else {
-					$('#signinform').effect( "shake" );
+					$('#signinform').effect( "shake", { "times": 2, "distance": 10, "duration": 300, "easing": "easeInSine" });
 				}
 			});
 		});
