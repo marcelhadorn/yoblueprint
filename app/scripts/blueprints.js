@@ -4,9 +4,13 @@ App: Blueprint, Author: Marcel Hadorn (@marc3llo)
 #################################################
 All the Blueprint Magic
 */
+
+// SETTINGS!
+var showgrid = true;
+
+
+// Edit below only if you know what you're doing.
 $(document).ready(function(){
-	// SETTINGS!
-	var showgrid = true;
 
 	if(showgrid == true){
 		$('html').addClass('showgrid');
