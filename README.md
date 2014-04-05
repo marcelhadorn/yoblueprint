@@ -24,11 +24,17 @@ Blueprint was build for the following type of workflow:
 
 ## Installation
 Blueprint is build with [Yeoman][4] with the couchapp generator, however you may also use the simple webapp-generator and edit the Gruntfile.js. If you use Yeoman simply go with:
-```$ yo couchapp```
+```
+$ yo couchapp
+```
 and checkout this repo in your project:
-```$ git clone https://github.com/Marc3llo/blueprint.git``` 
+```
+$ git clone https://github.com/Marc3llo/blueprint.git
+``` 
 and install the dependencies by
-```$ bower install```
+```
+$ bower install
+```
 
 
 ## Usage
